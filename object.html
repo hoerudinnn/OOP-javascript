@@ -10,11 +10,21 @@
 
         // oop di javascript
         function Person() {
+            // property di dalam constructor function
+            this.firstName = " ";
+            this.lastName = " ";
 
         }
 
         const budi = new Person();
+        // mengisi value dari masing2 property
+        Person.firstName = "Budi"
+
         const eko = new Person();
+
+
+        console.table(budi);
+        console.table(eko);
 
     </script>
 </body>
