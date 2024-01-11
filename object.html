@@ -14,13 +14,24 @@
             this.firstName = " ";
             this.lastName = " ";
 
+            // method di dalam constructor function
+            this.sayHello = function(name) {
+                console.info(`Hello ${name}, my name is ${this.firstName}`);
+            }
+
         }
 
         const budi = new Person();
         // mengisi value dari masing2 property
-        Person.firstName = "Budi"
+        budi.firstName = "Budi"
+        budi.lastName = "Nugraha"
+        // mengisi value dari method
+        budi.sayHello("Joko")
 
         const eko = new Person();
+        eko.firstName = "Eko"
+        eko.lastName = "Kurniawan"
+        eko.sayHello("Joko")
 
 
         console.table(budi);
