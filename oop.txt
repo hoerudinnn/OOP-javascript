@@ -1,0 +1,15 @@
+Object-Oriented Programming (OOP) adalah paradigma pemrograman yang menggunakan konsep objek sebagai dasar pembangunan perangkat lunak. Dalam OOP, program diorganisir sebagai kumpulan objek yang berinteraksi satu sama lain untuk mencapai tujuan tertentu. Objek dapat mencakup data (disebut atribut) dan fungsi (disebut metode) yang bekerja pada data tersebut.
+
+Pada dasarnya, OOP menggabungkan data dan operasi pada data ke dalam satu unit yang disebut objek. Objek merupakan instance atau representasi konkret dari suatu kelas. Kelas, di sisi lain, adalah blueprint atau template untuk menciptakan objek. Dengan kata lain, objek adalah realisasi nyata dari suatu konsep atau ide yang diwakili oleh kelas.
+
+OOP didasarkan pada empat konsep utama, yaitu:
+
+1. **Encapsulation (Enkapsulasi):** Menyembunyikan rincian implementasi objek dan hanya mengekspos fungsionalitas yang diperlukan. Enkapsulasi membantu menjaga integritas data dan mendorong pemisahan antara antarmuka publik dan implementasi internal.
+
+2. **Inheritance (Pewarisan):** Memungkinkan suatu kelas (kelas turunan atau subclass) untuk mewarisi sifat dan perilaku dari kelas lain yang sudah ada (kelas induk atau superclass). Ini mempromosikan penggunaan kembali kode dan hierarki struktur.
+
+3. **Polymorphism (Polimorfisme):** Membuat suatu fungsi atau objek dapat memiliki beberapa bentuk atau perilaku. Polimorfisme memungkinkan penggunaan metode yang sama dengan cara yang berbeda, seperti melalui overloading atau overriding.
+
+4. **Abstraction (Abstraksi):** Memfokuskan pada aspek-aspek penting dan mengabaikan yang tidak penting dari suatu objek. Abstraksi menyederhanakan kompleksitas dan membantu pengembang memahami dan menggunakan objek tanpa harus terlalu terlibat dalam rincian implementasi.
+
+Dengan menerapkan konsep-konsep ini, OOP membantu meningkatkan modularitas, fleksibilitas, dan pemeliharaan perangkat lunak dengan memecahnya menjadi bagian-bagian yang lebih kecil dan terorganisir.
