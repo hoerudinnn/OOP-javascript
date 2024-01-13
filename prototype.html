@@ -16,7 +16,7 @@
 
         // Menambahkan metode ke prototipe 'Person'
         Person.prototype.sayHello = function() {
-            document.writeln(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            console.info(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
         };
 
         // Membuat objek dari prototipe 'Person'
@@ -27,6 +27,8 @@
         person1.sayHello(); // Output: Hello, my name is John and I am 25 years old.
         person2.sayHello(); // Output: Hello, my name is Alice and I am 30 years old.
 
+        console.log(person1);
+        console.log(person2);
 
     </script>
 </body>
