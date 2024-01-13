@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Mendefinisikan class 'Person'
+        class Person {
+        constructor(name) { // Constructor untuk inisialisasi properti objek
+            this.name = name;
+        }
+
+        sayHello() { // Metode sayHello untuk mencetak pesan salam dengan nama
+            console.info(`Hello, my name is ${this.name}`);
+        }
+        }
+
+        const names = new Person("Eko"); // Membuat objek 'names' dari class 'Person' dengan nama "Eko"
+
+        // Memanggil metode sayHello dari objek 'names'
+        names.sayHello(); // Output: Hello, my name is Eko
+
+        // Mencetak informasi objek 'names' ke konsol
+        console.info(names);
+        // Output: Person { name: 'Eko' }
+
+    </script>
+</body>
+</html>
