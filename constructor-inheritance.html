@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Employee(firstName) {
+            this.firstName = firstName
+            this.sayHello = function(name) {
+                console.info (`Hello ${name}, my name is ${this.firstName}`)
+            }
+        }
+
+        // memanggil function employee menggunakan constructor inheritance
+        function Manager(firstName, lastName) {
+            this.lastName = lastName
+            Employee.call(this, firstName);
+        }
+
+        const budi = new Manager("Budi", "Sudrajat");
+        console.info(budi);
+
+        /* 
+        // Mendefinisikan fungsi Employee dengan parameter firstName
+        function Employee(firstName) {
+            // Menginisialisasi properti firstName pada objek yang dibuat
+            this.firstName = firstName;
+
+            // Mendefinisikan metode sayHello yang mencetak pesan ke konsol
+            this.sayHello = function(name) {
+                console.info(`Hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        // Mendefinisikan fungsi Manager dengan parameter firstName dan lastName
+        function Manager(firstName, lastName) {
+            // Menginisialisasi properti lastName pada objek yang dibuat
+            this.lastName = lastName;
+
+            // Memanggil fungsi Employee dengan menggunakan konsep "inheritance" menggunakan .call()
+            Employee.call(this, firstName);
+        }
+
+        // Membuat objek baru 'budi' dengan menggunakan fungsi konstruktor Manager
+        const budi = new Manager("Budi", "Sudrajat");
+
+        // Mencetak objek 'budi' ke konsol untuk melihat hasilnya
+        console.info(budi);
+
+        */
+
+    </script>
+</body>
+</html>
