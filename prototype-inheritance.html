@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype inheritance</title>
+</head>
+<body>
+    <script>
+
+        // Mendefinisikan konstruktor objek 'Employee' dengan satu parameter 'name'
+        function Employee(name) {
+            this.name = name;
+        }
+
+        // Mendefinisikan konstruktor objek 'Manager' dengan satu parameter 'name'
+        function Manager(name) {
+            this.name = name;
+        }
+
+        // salah
+        // Employee.prototype = Manager.prototype;
+        // Penjelasan: Langkah ini adalah salah karena ini akan menyebabkan Employee dan Manager berbagi prototipe yang sama.
+
+        // benar
+        Employee.prototype = Object.create(Manager.prototype);
+        // Penjelasan: Menggunakan Object.create() untuk membuat salinan prototipe Manager sebagai prototipe baru untuk Employee.
+        // Ini memastikan bahwa perubahan pada prototipe Employee tidak memengaruhi prototipe Manager dan sebaliknya.
+
+        // Menambahkan metode sayHello ke prototipe Employee
+        Employee.prototype.sayHello = function(name) {
+            console.info(`Hello ${name}, saya adalah Employee ${this.name}`);
+        }
+
+        // Menambahkan metode sayHello ke prototipe Manager
+        Manager.prototype.sayHello = function(name) {
+            console.info(`Hello ${name}, saya adalah Manager ${this.name}`);
+        }
+
+        // Membuat objek Employee dengan nama "Joko"
+        const employee = new Employee("Joko");
+
+        // Membuat objek Manager dengan nama "Budi"
+        const manager = new Manager("Budi");
+
+        // Memanggil metode sayHello dari objek Employee dengan parameter "Eko"
+        employee.sayHello("Eko");
+
+        // Memanggil metode sayHello dari objek Manager dengan parameter "Eko"
+        manager.sayHello("Eko");
+
+        console.log(employee);
+        console.log(manager);
+
+
+
+    </script>
+</body>
+</html>
