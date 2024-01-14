@@ -8,27 +8,54 @@
 <body>
     <script>
 
-        class Person {
-            constructor(firstName, lastName) {
+        class Person { // Definisi kelas Person
+            constructor(firstName, lastName) { // Konstruktor untuk membuat objek Person dengan properti firstName dan lastName
                 this.firstName = firstName;
                 this.lastName = lastName;
             }
 
-            get fullName() {
+            get fullName() { // Getter untuk mendapatkan nilai fullName
                 return `Hello ${this.firstName} and ${this.lastName}`;
             }
 
-            set fullName(value) {
-                const result = value.split(" ");
-                firstName = result[0];
-                lastName = result[1];
+            set fullName(value) { // Setter untuk mengatur nilai fullName
+                const result = value.split(" "); // Memisahkan nilai fullName menjadi array kata-kata
+                this.firstName = result[0]; // Mengatur nilai firstName dan lastName berdasarkan hasil pemisahan
+                this.lastName = result[1];
             }
         }
 
-        const person = new Person("John", "Doe");
-        console.info(person);
-        console.info(person.fullName);
+        const person = new Person("John", "Doe"); // Membuat objek person menggunakan kelas Person dengan nilai awal "John" dan "Doe"
+        console.info(person); // Menampilkan informasi objek person ke konsol
+        console.info(person.fullName); // Memanggil getter fullName dan menampilkan hasilnya ke konsol
 
+
+    /* Penjelasan lebih rinci:
+
+    1. **Kelas Person:**
+    - Kelas ini memiliki dua properti, `firstName` dan `lastName`, yang diatur melalui konstruktor.
+    - Terdapat getter (`fullName`) dan setter (`fullName`) untuk mengakses dan mengubah nilai properti `fullName`.
+
+    2. **Konstruktor:**
+    - Konstruktor menerima dua parameter (`firstName` dan `lastName`) untuk menginisialisasi properti objek.
+
+    3. **Getter fullName:**
+    - Mengembalikan string yang menggabungkan `firstName` dan `lastName` dengan format tertentu.
+
+    4. **Setter fullName:**
+    - Menerima nilai baru untuk `fullName` dan membaginya menjadi array kata-kata.
+    - Mengatur `firstName` dan `lastName` berdasarkan hasil pemisahan.
+
+    5. **Membuat objek person:**
+    - Membuat instance dari kelas Person dengan nilai awal "John" dan "Doe".
+
+    6. **Menampilkan informasi objek person ke konsol:**
+    - Menggunakan `console.info` untuk menampilkan informasi objek person ke konsol.
+
+    7. **Menampilkan fullName ke konsol:**
+    - Memanggil getter `fullName` dan menampilkan hasilnya ke konsol.
+
+   */
     </script>
 </body>
 </html>
