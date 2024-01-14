@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Mendefinisikan kelas dasar 'Shape' untuk merepresentasikan bentuk geometris
+        class Shape {
+            // Metode paint() akan mencetak pesan "Paint Shape" ke konsol
+            paint() {
+                console.info("Paint Shape");
+            }
+        }
+
+        // Mengambil kelas 'Circle' yang mewarisi dari kelas 'Shape'
+        class Circle extends Shape {
+            // Override metode paint() dari kelas 'Shape' untuk menambahkan pesan tambahan
+            paint() {
+                // Memanggil metode paint() dari kelas 'Shape' menggunakan 'super'
+                super.paint();
+                // Menambahkan pesan "Paint Circle" ke konsol setelah pesan dari kelas 'Shape'
+                console.info("Paint Circle");
+            }
+        }
+
+        // Membuat instance objek dari kelas 'Circle'
+        const circle = new Circle();
+        // Memanggil metode paint() dari kelas 'Circle', yang akan menjalankan metode paint() dari kelas 'Shape' terlebih dahulu
+        circle.paint();
+
+
+    </script>
+</body>
+</html>
