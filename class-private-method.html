@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Person {
+            // Deklarasi kelas Person
+
+            // Metode say menerima parameter 'name', dan memanggil metode #sayWithName jika 'name' terdefinisi,
+            // atau memanggil metode #sayWithoutName jika 'name' tidak terdefinisi.
+            say(name) {
+                if (name) {
+                    this.#sayWithName(name);
+                } else {
+                    this.#sayWithoutName();
+                }
+            }
+
+            // Metode privat #sayWithoutName untuk menampilkan pesan sapaan tanpa nama
+            #sayWithoutName() {
+                console.info("Hello");
+            }
+
+            // Metode privat #sayWithName untuk menampilkan pesan sapaan dengan nama
+            #sayWithName(name) {
+                console.info(`Hello ${name}`);
+            }
+        }
+
+        // Membuat objek baru dari kelas Person dengan nama 'budi'
+        const budi = new Person();
+
+        // Memanggil metode say pada objek 'budi' dengan parameter "Budi"
+        budi.say("Budi");
+
+
+    </script>
+</body>
+</html>
