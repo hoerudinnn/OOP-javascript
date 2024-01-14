@@ -13,12 +13,17 @@
             firstName = "John"; // Public class field untuk properti firstName dengan nilai default "John"
             lastName = "Doe";
 
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
             sayHello(name) {
                 console.info(`Hello ${name}, my name is ${this.firstName} ${this.lastName}`);
             }
         }
 
-        const person = new Person();
+        const person = new Person("Budi", "Eko");
         person.sayHello("Joko");
 
         console.log(person);
