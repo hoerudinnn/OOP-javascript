@@ -8,35 +8,37 @@
 <body>
     <script>
 
+        // Definisikan kelas Employee sebagai dasar untuk semua karyawan
         class Employee {
-            constructor(firstName) {
+            constructor(firstName) { // Konstruktor untuk membuat objek Employee dengan nama depan
                 this.firstName = firstName;
             }
 
-            sayHello(name) {
+            sayHello(name) { // Metode untuk memberi salam dengan memasukkan nama lain
                 console.info(`Hello ${name}, my name is employee ${this.firstName}`);
             }
         }
 
-        class Manager extends Employee{
-            constructor (firstName, lastName) {
-                super(firstName);
+        class Manager extends Employee { // Turunkan kelas Manager dari kelas Employee menggunakan extends
+            constructor(firstName, lastName) { // Konstruktor untuk membuat objek Manager dengan nama depan dan nama belakang
+                super(firstName); // Memanggil konstruktor kelas induk (Employee)
                 this.lastName = lastName;
             }
 
-            sayHello(name) {
+            sayHello(name) { // Override metode sayHello dari kelas Employee untuk menampilkan nama lengkap
                 console.info(`Hello ${name}, my name is manager ${this.firstName} ${this.lastName}`);
             }
         }
 
-        const employee = new Employee("Budi");
-        employee.sayHello("Joko");
+        const employee = new Employee("Budi"); // Membuat instance dari kelas Employee dengan nama "Budi"
+        employee.sayHello("Joko"); // Memanggil metode sayHello untuk objek Employee
 
         const manager = new Manager("Eko", "Kurniawan");
         manager.sayHello("Joko");
 
-        console.info(employee);
+        console.info(employee); // Menampilkan informasi tentang objek Employee ke konsol
         console.info(manager);
+
 
     </script>
 </body>
