@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Deklarasi kelas Math
+        class Math {
+            // Metode statis untuk menghitung jumlah dari sejumlah angka
+            static sum(...numbers) {
+                // Mengecek apakah ada parameter yang diberikan
+                if (numbers.length === 0) {
+                    // Melempar error jika tidak ada parameter yang diberikan
+                    throw new Error("Total parameter harus lebih dari 0");
+                }
+
+                // Inisialisasi variabel total
+                let total = 0;
+
+                // Melakukan iterasi pada setiap angka dan menambahkannya ke total
+                for (const number of numbers) {
+                    total += number;
+                }
+
+                // Mengembalikan total
+                return total;
+            }
+        }
+
+        // Memanggil metode sum tanpa parameter, akan melempar Error
+        try {
+            console.log(Math.sum());
+        } catch (error) {
+            // Menangkap dan menampilkan error beserta pesannya
+            console.error(`${error.name}: ${error.message}`);
+        }
+
+        // Memanggil metode sum dengan beberapa parameter
+        const result = Math.sum(1, 1, 1, 1, 3);
+        console.log(result); // Output: 7
+
+
+        // Deklarasi kelas CustomError yang merupakan turunan dari kelas bawaan Error
+        class CustomError extends Error {
+            // Konstruktor kelas CustomError
+            constructor(message) {
+                // Memanggil konstruktor kelas Error dengan pesan yang diberikan
+                super(message);
+
+                // Menetapkan nama untuk instance dari CustomError
+                this.name = "CustomError";
+            }
+        }
+
+        // Deklarasi kelas Calculator
+        class Calculator {
+            // Metode untuk penambahan dengan penanganan error
+            add(a, b) {
+                // Memeriksa apakah kedua input adalah angka
+                if (typeof a !== "number" || typeof b !== "number") {
+                    // Melempar error kustom jika input bukan angka
+                    throw new CustomError("Input harus berupa angka");
+                }
+                // Mengembalikan hasil penambahan
+                return a + b;
+            }
+
+            // Metode untuk pembagian dengan penanganan error
+            divide(a, b) {
+                // Memeriksa apakah pembagi adalah nol
+                if (b === 0) {
+                    // Melempar error kustom jika pembagi adalah nol
+                    throw new CustomError("Tidak dapat membagi dengan nol");
+                }
+                // Mengembalikan hasil pembagian
+                return a / b;
+            }
+        }
+
+        // Contoh penggunaan Calculator dengan penanganan error
+        const calculator = new Calculator();
+
+        // Contoh 1: Menambahkan angka dan string, akan melempar CustomError
+        try {
+            const result1 = calculator.add(5, "abc");
+            console.log(result1);
+        } catch (error) {
+            // Menangkap dan menampilkan error beserta pesan kustomnya
+            console.error(`${error.name}: ${error.message}`);
+        }
+
+        // Contoh 2: Membagi angka dengan nol, akan melempar CustomError
+        try {
+            const result2 = calculator.divide(10, 0);
+            console.log(result2);
+        } catch (error) {
+            // Menangkap dan menampilkan error beserta pesan kustomnya
+            console.error(`${error.name}: ${error.message}`);
+        }
+
+
+    </script>
+</body>
+</html>
