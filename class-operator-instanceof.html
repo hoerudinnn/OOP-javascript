@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Employee { // Ini adalah kelas dasar yang disebut "Employee"
+
+        }
+
+        class Manager extends Employee { // Ini adalah kelas yang mengextends (mewarisi) dari kelas "Employee"
+            
+        }
+
+        const employee = new Employee(); // Membuat objek dari kelas "Employee"
+        const manager = new Manager(); // Membuat objek dari kelas "Manager", yang merupakan turunan dari "Employee"
+
+        console.log(typeof employee); // Menampilkan jenis dari objek "employee"
+        console.log(typeof manager);
+
+        console.log(employee instanceof Employee); // Memeriksa apakah objek "employee" merupakan instance dari kelas "Employee"
+        console.log(employee instanceof Manager); // dan "Manager"
+
+        console.log(manager instanceof Employee); // memeriksa objek "manager" merupakan instance dari kelas "Employee"
+        console.log(manager instanceof Manager); // dan "Manager"
+
+
+    </script>
+</body>
+</html>
