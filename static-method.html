@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Math {
+            static sum(...numbers) {
+                let total = 0;
+                for (const number of numbers) {
+                    total += number
+                }
+
+                return total;
+            }
+        }
+
+        const result = Math.sum(1,1,1,1,3);
+        console.log(result);
+        
+
+        // contoh static method real project
+        class User {
+            constructor(name, email) {
+                this.name = name;
+                this.email = email;
+            }
+
+            // Metode instance untuk membuat instance User baru
+            static createUser(name, email) {
+                return new User(name, email);
+            }
+
+            // Metode instance untuk memeriksa validitas alamat email
+            isValidEmail() {
+                return /\S+@\S+\.\S+/.test(this.email);
+            }
+
+            // Metode statis untuk mengembalikan jumlah total pengguna dalam aplikasi
+            static getTotalUsers(usersArray) {
+                return usersArray.length;
+            }
+        }
+
+        // Membuat instance User dengan metode statis
+        const newUser = User.createUser("John Doe", "john@example.com");
+
+        // Memeriksa validitas email menggunakan metode instance
+        console.log(newUser.isValidEmail()); // Output: true
+
+        // Menghitung total pengguna menggunakan metode statis
+        const usersArray = [newUser, new User("Jane Doe", "jane@example.com")];
+        console.log(User.getTotalUsers(usersArray)); // Output: 2
+
+
+    </script>
+</body>
+</html>
