@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Deklarasi kelas Configuration
+        class Configuration {
+            // Properti statis untuk menyimpan informasi konfigurasi
+            static name = "Belajar JavaScript";
+            static version = 1.0;
+            static author = "Hoerudin";
+        }
+
+        // Membuat objek baru dari kelas Configuration
+        const config = new Configuration();
+        console.log(config); // Output: Configuration {}
+
+        // Mengakses properti statis langsung melalui kelas Configuration
+        console.log(Configuration.name); // Output: Belajar JavaScript
+        console.log(Configuration.version); // Output: 1.0
+        console.log(Configuration.author); // Output: Hoerudin
+
+        /*
+        Catatan:
+
+        1. Properti statis dapat diakses tanpa membuat objek dari kelas, dan nilai properti statisnya bersifat bersama di antara semua instansi dari kelas tersebut.
+        2. Pada contoh ini, kelas Configuration digunakan untuk menyimpan informasi konfigurasi dengan menggunakan properti statis.
+
+        */
+
+
+    </script>
+</body>
+</html>
