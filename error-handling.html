@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Counts {
+            static sum(...numbers) {
+                if (numbers.length === 0) {
+                    throw new Error("total parameter harus lebih dari 0");
+                }
+
+                let total = 0;
+
+                for (const number of numbers) {
+                    total += number
+                }
+
+                return total;
+            }
+        }
+
+        try {
+            console.log(Counts.sum());
+            console.log("Hello")
+        } catch (error) {
+            console.info(`Error: ${error.message}`);
+        } finally {
+            console.log("Selesai")
+        }
+
+        console.log(Counts.sum());
+        console.log(Counts.sum(20,10));
+
+        class Example {
+            constructor() {
+                this.resource = null;
+            }
+
+            acquireResource() {
+                try {
+                    // Simulasi kode yang dapat menimbulkan kesalahan saat mengakuisisi sumber daya
+                    if (Math.random() < 0.5) {
+                        throw new Error("Gagal mengakuisisi sumber daya");
+                    }
+
+                    // Berhasil mengakuisisi sumber daya
+                    this.resource = "Sumber Daya berhasil diakuisisi";
+                    console.log(this.resource);
+                } finally {
+                    // Blok finally akan selalu dieksekusi, baik terjadi kesalahan atau tidak
+                    console.log("Blok Finally dieksekusi, melakukan pembersihan atau penanganan akhir.");
+                }
+            }
+
+            releaseResource() {
+                try {
+                    // Simulasi kode yang dapat menimbulkan kesalahan saat melepaskan sumber daya
+                    if (Math.random() < 0.5) {
+                        throw new Error("Gagal melepaskan sumber daya");
+                    }
+
+                    // Berhasil melepaskan sumber daya
+                    this.resource = null;
+                    console.log("Sumber daya berhasil dilepaskan");
+                } finally {
+                    // Blok finally akan selalu dieksekusi, baik terjadi kesalahan atau tidak
+                    console.log("Blok Finally dieksekusi, melakukan pembersihan atau penanganan akhir.");
+                }
+            }
+        }
+
+        // Contoh penggunaan try...finally dengan instance kelas Example
+        const exampleInstance = new Example();
+
+        // Mengakuisisi sumber daya dengan penanganan kesalahan dan finally
+        exampleInstance.acquireResource();
+
+        // Melepaskan sumber daya dengan penanganan kesalahan dan finally
+        exampleInstance.releaseResource();
+
+
+    </script>
+</body>
+</html>
