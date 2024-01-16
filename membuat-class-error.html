@@ -15,6 +15,24 @@
             }
         }
 
+        function devideNumber(a, b) {
+            if(b == 0) {
+                throw new CustomError("Cannot divide by zero");
+            }
+            return a / b;
+        }
+
+        try {
+            const result = devideNumber(10, 0);
+            console.log(result);
+        } catch (error) {
+            if(error instanceof CustomError) {
+                console.error("Custom Error: " + error.message);
+            } else {
+                console.error("Unexpected Error: " + error.message);
+            }
+        }
+
     </script>
 </body>
 </html>
