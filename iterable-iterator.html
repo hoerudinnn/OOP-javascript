@@ -9,18 +9,83 @@
     <script>
 
         // Iterable (Array)
-        const numbers = [1, 2, 3, 4, 5];
+        // const numbers = [1, 2, 3, 4, 5];
 
         // Iterator
-        const iterator = numbers[Symbol.iterator]();
+        // const iterator = numbers[Symbol.iterator]();
 
         // Menggunakan iterator
-        console.log(iterator.next()); // { value: 1, done: false }
-        console.log(iterator.next()); // { value: 2, done: false }
-        console.log(iterator.next()); // { value: 3, done: false }
-        console.log(iterator.next()); // { value: 4, done: false }
-        console.log(iterator.next()); // { value: 5, done: false }
-        console.log(iterator.next()); // { value: undefined, done: true }
+        // console.log(iterator.next()); // { value: 1, done: false }
+        // console.log(iterator.next()); // { value: 2, done: false }
+        // console.log(iterator.next()); // { value: 3, done: false }
+        // console.log(iterator.next()); // { value: 4, done: false }
+        // console.log(iterator.next()); // { value: 5, done: false }
+        // console.log(iterator.next()); // { value: undefined, done: true }
+
+        // Kelas CounterIteratorResult merepresentasikan hasil dari setiap iterasi dalam CounterIterator.
+        class CounterIteratorResult {
+            // Konstruktor mengambil nilai saat ini dan status done sebagai parameter.
+            constructor(value, done) {
+                // Setel properti value dengan nilai yang diberikan.
+                this.value = value;
+                // Setel properti done dengan status done yang diberikan.
+                this.done = done;
+            }
+        }
+
+        // Kelas CounterIterator mengimplementasikan protokol iterator untuk kelas Counter.
+        class CounterIterator {
+            // Konstruktor mengambil nilai saat ini dan nilai maksimum untuk iterasi.
+            constructor(value, max) {
+                // Inisialisasi nilai saat ini.
+                this.value = value;
+                // Setel nilai maksimum untuk iterasi.
+                this.max = max;
+            }
+
+            // Metode next dipanggil pada setiap iterasi dan mengembalikan objek hasil.
+            next() {
+                try {
+                    // Periksa apakah nilai saat ini telah melebihi nilai maksimum.
+                    if (this.value > this.max) {
+                        // Jika melebihi, kembalikan CounterIteratorResult dengan done disetel menjadi true.
+                        return new CounterIteratorResult(this.value, true);
+                    } else {
+                        // Jika tidak melebihi, kembalikan CounterIteratorResult dengan done disetel menjadi false.
+                        return new CounterIteratorResult(this.value, false);
+                    }
+                } finally {
+                    // Tingkatkan nilai saat ini tanpa memperhatikan kondisi.
+                    this.value++;
+                }
+            }
+        }
+
+        // Kelas Counter merepresentasikan penghitung dengan nilai awal dan nilai maksimum untuk iterasi.
+        class Counter {
+            // Konstruktor mengambil nilai awal dan nilai maksimum untuk iterasi.
+            constructor(value, max) {
+                // Setel nilai awal.
+                this.value = value;
+                // Setel nilai maksimum untuk iterasi.
+                this.max = max;
+            }
+
+            // Metode Symbol.iterator mengembalikan CounterIterator untuk iterasi.
+            [Symbol.iterator]() {
+                // Kembalikan instance baru dari CounterIterator dengan nilai awal dan nilai maksimum.
+                return new CounterIterator(this.value, this.max);
+            }
+        }
+
+        // Buat instance Counter dengan nilai awal 1 dan nilai maksimum 10.
+        const counter = new Counter(1, 20);
+
+        // Iterasi melalui Counter menggunakan loop for...of.
+        for (const counterattack of counter) {
+            // Catat setiap hasil iterasi ke konsol.
+            console.log(counterattack);
+        }
 
 
     </script>
